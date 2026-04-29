@@ -139,7 +139,7 @@ export default function Dashboard() {
               onClick={() => setSelected(plant)}
             >
               <div className={styles.cardImg}>
-                <img src={plant.imageUrl} alt={plant.name} />
+                <img src={plant.imageUrl} alt={plant.name} crossOrigin="anonymous" />
                 {plant.toxic && <span className={styles.toxicBadge}>⚠️ Tóxica</span>}
               </div>
               <div className={styles.cardBody}>
@@ -160,7 +160,7 @@ export default function Dashboard() {
         <div className={styles.overlay} onClick={() => setSelected(null)}>
           <div className={styles.modal} onClick={e => e.stopPropagation()}>
             <button className={styles.closeBtn} onClick={() => setSelected(null)}>✕</button>
-            <img src={selected.imageUrl} alt={selected.name} className={styles.modalImg} />
+            <img src={selected.imageUrl} alt={selected.name} className={styles.modalImg} crossOrigin="anonymous" />
             <div className={styles.modalBody}>
               <h2>{selected.name}</h2>
               <p className={styles.modalSpecies}>{selected.species}</p>
